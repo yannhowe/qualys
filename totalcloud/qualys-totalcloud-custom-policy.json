@@ -1,0 +1,35 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "QualysCustomPolicyPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "states:DescribeStateMachine",
+                "elasticfilesystem:DescribeFileSystemPolicy",
+                "qldb:ListLedgers",
+                "qldb:DescribeLedger",
+                "kafka:ListClusters",
+                "codebuild:BatchGetProjects",
+                "wafv2:GetWebACLForResource",
+                "backup:ListBackupVaults",
+                "backup:DescribeBackupVault",
+                "ec2:GetEbsEncryptionByDefault",
+                "ec2:GetEbsDefaultKmsKeyId",
+                "guardduty:ListDetectors",
+                "guardduty:GetDetector",
+                "glue:GetDataCatalogEncryptionSettings",
+                "elasticmapreduce:GetBlockPublicAccessConfiguration",
+                "lambda:GetFunctionConcurrency",
+                "ds:ListLogSubscriptions"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "QualysAPIGatewayGetPermissions",
+            "Effect": "Allow",
+            "Action": "apigateway:GET",
+            "Resource": "arn:aws:apigateway:*::/restapis/*"
+        }
+    ]
+}
